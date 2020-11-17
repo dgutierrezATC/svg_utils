@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='ASCII' standalone='yes'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100px" viewBox="0 0 100px 40px" height="40px">
+  <g>
+    <text fill="black" font-family="Verdana" font-size="12" font-weight="normal" letter-spacing="0" text-anchor="start" x="0" y="10">ABCDEFGHIJ</text>
+    <text fill="black" font-family="Verdana" font-size="12" font-weight="normal" letter-spacing="1" text-anchor="start" x="0" y="20">ABCDEFGHIJ</text>
+    <text fill="black" font-family="Verdana" font-size="12" font-weight="normal" letter-spacing="2" text-anchor="start" x="0" y="30">ABCDEFGHIJ</text>
+    <text fill="black" font-family="Verdana" font-size="12" font-weight="normal" letter-spacing="-1" text-anchor="start" x="0" y="40">ABCDEFGHIJ</text>
+  </g>
+</svg>
