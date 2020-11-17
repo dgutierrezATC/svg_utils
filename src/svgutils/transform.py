@@ -275,11 +275,16 @@ class SVGFigure(object):
                               standalone=True,
                               pretty_print=True)
 
-    def save(self, fname):
-        """Save figure to a file"""
-        out = etree.tostring(self.root, xml_declaration=True,
+    def save(self, fname, encoding=None):
+        """
+        Save figure to a file
+        Default encoding is "ASCII" when None is specified, as dictated by lxml .
+        """
+        out = etree.tostring(self.root,
+                             xml_declaration=True,
                              standalone=True,
-                             pretty_print=True)
+                             pretty_print=True,
+                             encoding=encoding)
         with open(fname, 'wb') as fid:
             fid.write(out)
 
@@ -314,7 +319,7 @@ def fromfile(fname):
     """
     fig = SVGFigure()
     with open(fname) as fid:
-        svg_file = etree.parse(fid)
+        svg_file = etree.parse(fid, parser=etree.XMLParser(huge_tree=True))
 
     fig.root = svg_file.getroot()
     return fig
@@ -335,7 +340,7 @@ def fromstring(text):
         content.
     """
     fig = SVGFigure()
-    svg = etree.fromstring(text.encode())
+    svg = etree.fromstring(text.encode(), parser=etree.XMLParser(huge_tree=True))
 
     fig.root = svg
 
